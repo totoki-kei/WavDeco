@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WavDeco.WinForms {
+﻿namespace WavDeco.WinForms {
 
 	public enum BackupMode : int {
 		Disable = 0,
@@ -36,17 +30,41 @@ namespace WavDeco.WinForms {
 		/// 話者の検出を有効にするか
 		/// </summary>
 		public bool EnabledTalkerDetection { get; set; }
+
 		/// <summary>
 		/// 話者とセリフの区切り文字
 		/// </summary>
 		public string TalkerDelimiter { get; set; }
 
+		/// <summary>
+		/// 起動時にフォルダーを自動設定するか
+		/// </summary>
 		public bool EnableInitialFolder { get; set; }
 
+		/// <summary>
+		/// 起動時に自動設定するフォルダー
+		/// </summary>
 		public InitialFolder InitialFolder { get; set; }
 
+		/// <summary>
+		/// 起動してすぐ監視を開始するか
+		/// </summary>
 		public bool EnableInstantStart { get; set; }
 
+		/// <summary>
+		/// 許容するwav/txtファイルのタイムスタンプ時差(ミリ秒)
+		/// </summary>
+		public double TimestampDeltaThresholdMsec { get; set; }
+
+		/// <summary>
+		/// 同一ファイルへの連続処理を無効化する時間(ミリ秒)
+		/// </summary>
+		public double OperationIntervalMsec { get; set; }
+
+
+		/// <summary>
+		/// (非設定項目)最後に監視したフォルダー
+		/// </summary>
 		public string LastFolder { get; set; }
 
 		public Setting Clone() {
@@ -59,6 +77,8 @@ namespace WavDeco.WinForms {
 				EnableInitialFolder = EnableInitialFolder,
 				InitialFolder = InitialFolder,
 				EnableInstantStart = EnableInstantStart,
+				TimestampDeltaThresholdMsec = TimestampDeltaThresholdMsec,
+				OperationIntervalMsec = OperationIntervalMsec,
 				LastFolder = LastFolder,
 			};
 		}
@@ -72,6 +92,8 @@ namespace WavDeco.WinForms {
 			EnableInitialFolder = true,
 			InitialFolder = InitialFolder.LastFolder,
 			EnableInstantStart = false,
+			TimestampDeltaThresholdMsec = 100,
+			OperationIntervalMsec = 10000,
 			LastFolder = null,
 		};
 	}

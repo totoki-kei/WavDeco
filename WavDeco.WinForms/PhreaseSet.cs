@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Threading;
 
 namespace WavDeco.WinForms {
 	public class PhreaseSet {
@@ -16,13 +15,14 @@ namespace WavDeco.WinForms {
 
 			{
 				var delta = (TextFileTime - WaveFileTime);
-				Debug.WriteLine(delta, "delta");
-				if (Math.Abs(delta.TotalSeconds) > 1.0) return false;
+				Debug.WriteLine(delta, "delta(txt/wav)");
+				if (Math.Abs(delta.TotalMilliseconds) > setting.TimestampDeltaThresholdMsec) return false;
 			}
 
 			if (LastProcessed != default) {
 				var delta = DateTime.Now - LastProcessed;
-				if (delta.TotalSeconds < 10) return false;
+				Debug.WriteLine(delta, "delta(lastproc)");
+				if (delta.TotalMilliseconds < setting.OperationIntervalMsec) return false;
 			}
 
 			return true;
