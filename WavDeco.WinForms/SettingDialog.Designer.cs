@@ -37,11 +37,11 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.TalkerCheckBox = new System.Windows.Forms.CheckBox();
 			this.StartupGroupBox = new System.Windows.Forms.GroupBox();
-			this.InstantStartCheckBox = new System.Windows.Forms.CheckBox();
-			this.StartupLastFolderRadioButton = new System.Windows.Forms.RadioButton();
-			this.StartupInitialFolderCheckBox = new System.Windows.Forms.CheckBox();
-			this.StartupAppFolderRadioButton = new System.Windows.Forms.RadioButton();
 			this.StartupWorkinDirectoryRadioButton = new System.Windows.Forms.RadioButton();
+			this.StartupAppFolderRadioButton = new System.Windows.Forms.RadioButton();
+			this.StartupInitialFolderCheckBox = new System.Windows.Forms.CheckBox();
+			this.StartupLastFolderRadioButton = new System.Windows.Forms.RadioButton();
+			this.InstantStartCheckBox = new System.Windows.Forms.CheckBox();
 			this.BackupGroupBox.SuspendLayout();
 			this.TalkerGroupBox.SuspendLayout();
 			this.StartupGroupBox.SuspendLayout();
@@ -52,10 +52,9 @@
 			this.LengthLimitCheckBox.AutoSize = true;
 			this.LengthLimitCheckBox.Checked = true;
 			this.LengthLimitCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.LengthLimitCheckBox.Location = new System.Drawing.Point(20, 18);
-			this.LengthLimitCheckBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+			this.LengthLimitCheckBox.Location = new System.Drawing.Point(12, 12);
 			this.LengthLimitCheckBox.Name = "LengthLimitCheckBox";
-			this.LengthLimitCheckBox.Size = new System.Drawing.Size(138, 22);
+			this.LengthLimitCheckBox.Size = new System.Drawing.Size(93, 16);
 			this.LengthLimitCheckBox.TabIndex = 0;
 			this.LengthLimitCheckBox.Text = "文字数を制限";
 			this.LengthLimitCheckBox.UseVisualStyleBackColor = true;
@@ -64,19 +63,17 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(297, 20);
-			this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+			this.label1.Location = new System.Drawing.Point(178, 13);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(127, 18);
+			this.label1.Size = new System.Drawing.Size(85, 12);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "文字(話者含む）";
 			// 
 			// LengthLimitTextBox
 			// 
-			this.LengthLimitTextBox.Location = new System.Drawing.Point(185, 15);
-			this.LengthLimitTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+			this.LengthLimitTextBox.Location = new System.Drawing.Point(111, 10);
 			this.LengthLimitTextBox.Name = "LengthLimitTextBox";
-			this.LengthLimitTextBox.Size = new System.Drawing.Size(99, 25);
+			this.LengthLimitTextBox.Size = new System.Drawing.Size(61, 19);
 			this.LengthLimitTextBox.TabIndex = 2;
 			this.LengthLimitTextBox.Text = "20";
 			this.LengthLimitTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -87,11 +84,9 @@
 			this.BackupGroupBox.Controls.Add(this.BackupInfiniteRadioButton);
 			this.BackupGroupBox.Controls.Add(this.BackupOneRadioButton);
 			this.BackupGroupBox.Controls.Add(this.BackupDisableRadioButton);
-			this.BackupGroupBox.Location = new System.Drawing.Point(20, 52);
-			this.BackupGroupBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+			this.BackupGroupBox.Location = new System.Drawing.Point(12, 35);
 			this.BackupGroupBox.Name = "BackupGroupBox";
-			this.BackupGroupBox.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-			this.BackupGroupBox.Size = new System.Drawing.Size(329, 142);
+			this.BackupGroupBox.Size = new System.Drawing.Size(197, 95);
 			this.BackupGroupBox.TabIndex = 3;
 			this.BackupGroupBox.TabStop = false;
 			this.BackupGroupBox.Text = "バックアップ";
@@ -99,10 +94,9 @@
 			// BackupInfiniteRadioButton
 			// 
 			this.BackupInfiniteRadioButton.AutoSize = true;
-			this.BackupInfiniteRadioButton.Location = new System.Drawing.Point(12, 94);
-			this.BackupInfiniteRadioButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+			this.BackupInfiniteRadioButton.Location = new System.Drawing.Point(7, 63);
 			this.BackupInfiniteRadioButton.Name = "BackupInfiniteRadioButton";
-			this.BackupInfiniteRadioButton.Size = new System.Drawing.Size(224, 22);
+			this.BackupInfiniteRadioButton.Size = new System.Drawing.Size(150, 16);
 			this.BackupInfiniteRadioButton.TabIndex = 0;
 			this.BackupInfiniteRadioButton.TabStop = true;
 			this.BackupInfiniteRadioButton.Text = "バックアップを無制限で残す";
@@ -111,10 +105,9 @@
 			// BackupOneRadioButton
 			// 
 			this.BackupOneRadioButton.AutoSize = true;
-			this.BackupOneRadioButton.Location = new System.Drawing.Point(12, 62);
-			this.BackupOneRadioButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+			this.BackupOneRadioButton.Location = new System.Drawing.Point(7, 41);
 			this.BackupOneRadioButton.Name = "BackupOneRadioButton";
-			this.BackupOneRadioButton.Size = new System.Drawing.Size(182, 22);
+			this.BackupOneRadioButton.Size = new System.Drawing.Size(122, 16);
 			this.BackupOneRadioButton.TabIndex = 0;
 			this.BackupOneRadioButton.TabStop = true;
 			this.BackupOneRadioButton.Text = "バックアップを1個残す";
@@ -124,10 +117,9 @@
 			// 
 			this.BackupDisableRadioButton.AutoSize = true;
 			this.BackupDisableRadioButton.Checked = true;
-			this.BackupDisableRadioButton.Location = new System.Drawing.Point(12, 28);
-			this.BackupDisableRadioButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+			this.BackupDisableRadioButton.Location = new System.Drawing.Point(7, 19);
 			this.BackupDisableRadioButton.Name = "BackupDisableRadioButton";
-			this.BackupDisableRadioButton.Size = new System.Drawing.Size(201, 22);
+			this.BackupDisableRadioButton.Size = new System.Drawing.Size(135, 16);
 			this.BackupDisableRadioButton.TabIndex = 0;
 			this.BackupDisableRadioButton.TabStop = true;
 			this.BackupDisableRadioButton.Text = "バックアップを作成しない";
@@ -137,10 +129,9 @@
 			// 
 			this.DialogOkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.DialogOkButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.DialogOkButton.Location = new System.Drawing.Point(391, 332);
-			this.DialogOkButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+			this.DialogOkButton.Location = new System.Drawing.Point(254, 221);
 			this.DialogOkButton.Name = "DialogOkButton";
-			this.DialogOkButton.Size = new System.Drawing.Size(125, 34);
+			this.DialogOkButton.Size = new System.Drawing.Size(75, 23);
 			this.DialogOkButton.TabIndex = 4;
 			this.DialogOkButton.Text = "OK";
 			this.DialogOkButton.UseVisualStyleBackColor = true;
@@ -150,10 +141,9 @@
 			// 
 			this.DialogCancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.DialogCancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.DialogCancelButton.Location = new System.Drawing.Point(549, 332);
-			this.DialogCancelButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+			this.DialogCancelButton.Location = new System.Drawing.Point(348, 221);
 			this.DialogCancelButton.Name = "DialogCancelButton";
-			this.DialogCancelButton.Size = new System.Drawing.Size(125, 34);
+			this.DialogCancelButton.Size = new System.Drawing.Size(75, 23);
 			this.DialogCancelButton.TabIndex = 5;
 			this.DialogCancelButton.Text = "キャンセル";
 			this.DialogCancelButton.UseVisualStyleBackColor = true;
@@ -163,35 +153,40 @@
 			this.TalkerGroupBox.Controls.Add(this.TalkerDelimiterTextBox);
 			this.TalkerGroupBox.Controls.Add(this.label2);
 			this.TalkerGroupBox.Controls.Add(this.TalkerCheckBox);
-			this.TalkerGroupBox.Location = new System.Drawing.Point(20, 201);
+			this.TalkerGroupBox.Location = new System.Drawing.Point(12, 134);
+			this.TalkerGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.TalkerGroupBox.Name = "TalkerGroupBox";
-			this.TalkerGroupBox.Size = new System.Drawing.Size(329, 102);
+			this.TalkerGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.TalkerGroupBox.Size = new System.Drawing.Size(197, 68);
 			this.TalkerGroupBox.TabIndex = 6;
 			this.TalkerGroupBox.TabStop = false;
 			this.TalkerGroupBox.Text = "話者設定";
 			// 
 			// TalkerDelimiterTextBox
 			// 
-			this.TalkerDelimiterTextBox.Location = new System.Drawing.Point(165, 51);
+			this.TalkerDelimiterTextBox.Location = new System.Drawing.Point(99, 34);
+			this.TalkerDelimiterTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.TalkerDelimiterTextBox.Name = "TalkerDelimiterTextBox";
-			this.TalkerDelimiterTextBox.Size = new System.Drawing.Size(100, 25);
+			this.TalkerDelimiterTextBox.Size = new System.Drawing.Size(62, 19);
 			this.TalkerDelimiterTextBox.TabIndex = 2;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(12, 54);
+			this.label2.Location = new System.Drawing.Point(7, 36);
+			this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(100, 18);
+			this.label2.Size = new System.Drawing.Size(67, 12);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "区切り文字 :";
 			// 
 			// TalkerCheckBox
 			// 
 			this.TalkerCheckBox.AutoSize = true;
-			this.TalkerCheckBox.Location = new System.Drawing.Point(12, 25);
+			this.TalkerCheckBox.Location = new System.Drawing.Point(7, 17);
+			this.TalkerCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.TalkerCheckBox.Name = "TalkerCheckBox";
-			this.TalkerCheckBox.Size = new System.Drawing.Size(261, 22);
+			this.TalkerCheckBox.Size = new System.Drawing.Size(173, 16);
 			this.TalkerCheckBox.TabIndex = 0;
 			this.TalkerCheckBox.Text = "話者を「アーティスト」に設定する";
 			this.TalkerCheckBox.UseVisualStyleBackColor = true;
@@ -204,72 +199,79 @@
 			this.StartupGroupBox.Controls.Add(this.StartupInitialFolderCheckBox);
 			this.StartupGroupBox.Controls.Add(this.StartupLastFolderRadioButton);
 			this.StartupGroupBox.Controls.Add(this.InstantStartCheckBox);
-			this.StartupGroupBox.Location = new System.Drawing.Point(357, 52);
+			this.StartupGroupBox.Location = new System.Drawing.Point(214, 35);
+			this.StartupGroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.StartupGroupBox.Name = "StartupGroupBox";
-			this.StartupGroupBox.Size = new System.Drawing.Size(317, 251);
+			this.StartupGroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.StartupGroupBox.Size = new System.Drawing.Size(209, 167);
 			this.StartupGroupBox.TabIndex = 7;
 			this.StartupGroupBox.TabStop = false;
 			this.StartupGroupBox.Text = "スタートアップ設定";
 			// 
-			// InstantStartCheckBox
-			// 
-			this.InstantStartCheckBox.AutoSize = true;
-			this.InstantStartCheckBox.Location = new System.Drawing.Point(16, 149);
-			this.InstantStartCheckBox.Name = "InstantStartCheckBox";
-			this.InstantStartCheckBox.Size = new System.Drawing.Size(252, 22);
-			this.InstantStartCheckBox.TabIndex = 1;
-			this.InstantStartCheckBox.Text = "可能ならすぐに監視を開始する";
-			this.InstantStartCheckBox.UseVisualStyleBackColor = true;
-			// 
-			// StartupLastFolderRadioButton
-			// 
-			this.StartupLastFolderRadioButton.AutoSize = true;
-			this.StartupLastFolderRadioButton.Location = new System.Drawing.Point(49, 56);
-			this.StartupLastFolderRadioButton.Name = "StartupLastFolderRadioButton";
-			this.StartupLastFolderRadioButton.Size = new System.Drawing.Size(187, 22);
-			this.StartupLastFolderRadioButton.TabIndex = 2;
-			this.StartupLastFolderRadioButton.TabStop = true;
-			this.StartupLastFolderRadioButton.Text = "前回の監視フォルダー";
-			this.StartupLastFolderRadioButton.UseVisualStyleBackColor = true;
-			// 
-			// StartupInitialFolderCheckBox
-			// 
-			this.StartupInitialFolderCheckBox.AutoSize = true;
-			this.StartupInitialFolderCheckBox.Location = new System.Drawing.Point(16, 28);
-			this.StartupInitialFolderCheckBox.Name = "StartupInitialFolderCheckBox";
-			this.StartupInitialFolderCheckBox.Size = new System.Drawing.Size(284, 22);
-			this.StartupInitialFolderCheckBox.TabIndex = 3;
-			this.StartupInitialFolderCheckBox.Text = "起動時にフォルダーを自動設定する";
-			this.StartupInitialFolderCheckBox.UseVisualStyleBackColor = true;
-			this.StartupInitialFolderCheckBox.CheckedChanged += new System.EventHandler(this.StartupInitialFolderCheckBox_CheckedChanged);
-			// 
-			// StartupAppFolderRadioButton
-			// 
-			this.StartupAppFolderRadioButton.AutoSize = true;
-			this.StartupAppFolderRadioButton.Location = new System.Drawing.Point(49, 84);
-			this.StartupAppFolderRadioButton.Name = "StartupAppFolderRadioButton";
-			this.StartupAppFolderRadioButton.Size = new System.Drawing.Size(210, 22);
-			this.StartupAppFolderRadioButton.TabIndex = 4;
-			this.StartupAppFolderRadioButton.TabStop = true;
-			this.StartupAppFolderRadioButton.Text = "このアプリのあるフォルダー";
-			this.StartupAppFolderRadioButton.UseVisualStyleBackColor = true;
-			// 
 			// StartupWorkinDirectoryRadioButton
 			// 
 			this.StartupWorkinDirectoryRadioButton.AutoSize = true;
-			this.StartupWorkinDirectoryRadioButton.Location = new System.Drawing.Point(49, 112);
+			this.StartupWorkinDirectoryRadioButton.Location = new System.Drawing.Point(29, 75);
+			this.StartupWorkinDirectoryRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.StartupWorkinDirectoryRadioButton.Name = "StartupWorkinDirectoryRadioButton";
-			this.StartupWorkinDirectoryRadioButton.Size = new System.Drawing.Size(205, 22);
+			this.StartupWorkinDirectoryRadioButton.Size = new System.Drawing.Size(138, 16);
 			this.StartupWorkinDirectoryRadioButton.TabIndex = 5;
 			this.StartupWorkinDirectoryRadioButton.TabStop = true;
 			this.StartupWorkinDirectoryRadioButton.Text = "起動時の作業フォルダー";
 			this.StartupWorkinDirectoryRadioButton.UseVisualStyleBackColor = true;
 			// 
+			// StartupAppFolderRadioButton
+			// 
+			this.StartupAppFolderRadioButton.AutoSize = true;
+			this.StartupAppFolderRadioButton.Location = new System.Drawing.Point(29, 56);
+			this.StartupAppFolderRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.StartupAppFolderRadioButton.Name = "StartupAppFolderRadioButton";
+			this.StartupAppFolderRadioButton.Size = new System.Drawing.Size(140, 16);
+			this.StartupAppFolderRadioButton.TabIndex = 4;
+			this.StartupAppFolderRadioButton.TabStop = true;
+			this.StartupAppFolderRadioButton.Text = "このアプリのあるフォルダー";
+			this.StartupAppFolderRadioButton.UseVisualStyleBackColor = true;
+			// 
+			// StartupInitialFolderCheckBox
+			// 
+			this.StartupInitialFolderCheckBox.AutoSize = true;
+			this.StartupInitialFolderCheckBox.Location = new System.Drawing.Point(10, 19);
+			this.StartupInitialFolderCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.StartupInitialFolderCheckBox.Name = "StartupInitialFolderCheckBox";
+			this.StartupInitialFolderCheckBox.Size = new System.Drawing.Size(190, 16);
+			this.StartupInitialFolderCheckBox.TabIndex = 3;
+			this.StartupInitialFolderCheckBox.Text = "起動時にフォルダーを自動設定する";
+			this.StartupInitialFolderCheckBox.UseVisualStyleBackColor = true;
+			this.StartupInitialFolderCheckBox.CheckedChanged += new System.EventHandler(this.StartupInitialFolderCheckBox_CheckedChanged);
+			// 
+			// StartupLastFolderRadioButton
+			// 
+			this.StartupLastFolderRadioButton.AutoSize = true;
+			this.StartupLastFolderRadioButton.Location = new System.Drawing.Point(29, 37);
+			this.StartupLastFolderRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.StartupLastFolderRadioButton.Name = "StartupLastFolderRadioButton";
+			this.StartupLastFolderRadioButton.Size = new System.Drawing.Size(126, 16);
+			this.StartupLastFolderRadioButton.TabIndex = 2;
+			this.StartupLastFolderRadioButton.TabStop = true;
+			this.StartupLastFolderRadioButton.Text = "前回の監視フォルダー";
+			this.StartupLastFolderRadioButton.UseVisualStyleBackColor = true;
+			// 
+			// InstantStartCheckBox
+			// 
+			this.InstantStartCheckBox.AutoSize = true;
+			this.InstantStartCheckBox.Location = new System.Drawing.Point(10, 99);
+			this.InstantStartCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.InstantStartCheckBox.Name = "InstantStartCheckBox";
+			this.InstantStartCheckBox.Size = new System.Drawing.Size(169, 16);
+			this.InstantStartCheckBox.TabIndex = 1;
+			this.InstantStartCheckBox.Text = "可能ならすぐに監視を開始する";
+			this.InstantStartCheckBox.UseVisualStyleBackColor = true;
+			// 
 			// SettingDialog
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(688, 379);
+			this.ClientSize = new System.Drawing.Size(432, 253);
 			this.Controls.Add(this.StartupGroupBox);
 			this.Controls.Add(this.TalkerGroupBox);
 			this.Controls.Add(this.DialogCancelButton);
@@ -279,7 +281,6 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.LengthLimitCheckBox);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-			this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
 			this.Name = "SettingDialog";
 			this.Text = "設定";
 			this.BackupGroupBox.ResumeLayout(false);
