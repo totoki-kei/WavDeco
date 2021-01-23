@@ -1,0 +1,16 @@
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\bin\Debug\ja\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\bin\Debug\ja\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\bin\Debug\ja\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\bin\Debug\WavDecoTest.dll
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\bin\Debug\WavDecoTest.pdb
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\obj\Debug\WavDecoTest.csproj.CoreCompileInputs.cache
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\obj\Debug\WavDecoTest.csproj.CopyComplete
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\obj\Debug\WavDecoTest.dll
+C:\Users\Kei\Source\Repos\WavDeco\WavDecoTest\obj\Debug\WavDecoTest.pdb

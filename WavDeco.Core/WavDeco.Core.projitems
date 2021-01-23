@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>69a19d30-38b2-4ace-bf85-2ef58b0fa163</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>WavDeco.Core</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)FourCC.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListTag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RiffChunk.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WavFile.cs" />
+  </ItemGroup>
+</Project>
