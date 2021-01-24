@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using System.Linq;
 using WavDeco.Core;
 
 namespace WavDeco.WinForms {
@@ -99,7 +98,10 @@ namespace WavDeco.WinForms {
 
 		private void OnFileDetected(string fullpath) {
 			var ext = Path.GetExtension(fullpath);
-			var pathWithoutExt = Path.GetFileNameWithoutExtension(fullpath);
+			var pathWithoutExt = Path.Combine(
+				Path.GetDirectoryName(fullpath),
+				Path.GetFileNameWithoutExtension(fullpath)
+			);
 
 			var ph = phreases.GetOrAdd(pathWithoutExt, (k) => new PhreaseSet());
 
@@ -113,6 +115,15 @@ namespace WavDeco.WinForms {
 			}
 
 			EnqueueRequest(ph);
+		}
+
+		private void RemovePhraseCache(string fullpath) {
+			var pathWithoutExt = Path.Combine(
+				Path.GetDirectoryName(fullpath),
+				Path.GetFileNameWithoutExtension(fullpath)
+			);
+
+			phreases.TryRemove(pathWithoutExt, out _);
 		}
 
 		private void EnqueueRequest(PhreaseSet ph) {
@@ -140,8 +151,9 @@ namespace WavDeco.WinForms {
 						result = serializer.Deserialize(src) as Setting;
 					}
 				}
-			} catch(InvalidOperationException) {
-				
+			}
+			catch (InvalidOperationException) {
+
 			}
 
 			if (result == null) {
@@ -240,7 +252,8 @@ namespace WavDeco.WinForms {
 				if (!observing) {
 					watcher.EnableRaisingEvents = false;
 					TargetFolderTextBox.Enabled = SettingButton.Enabled = true;
-				} else {
+				}
+				else {
 					setting.LastFolder = watcher.Path;
 					WriteLog($"フォルダ監視を開始しました フォルダ:'{watcher.Path}'");
 					SaveSetting(setting);
@@ -294,15 +307,15 @@ namespace WavDeco.WinForms {
 		#endregion
 
 
-		private void ThreadProc () {
+		private void ThreadProc() {
 
 			WriteLog("バックグラウンドスレッドを開始");
 
 			bool exitFlag = false;
-			while(!exitFlag) {
+			while (!exitFlag) {
 				switch (WaitHandle.WaitAny(new WaitHandle[] { processQueueEvent, exitEvent })) {
 				case 0:
-					while(processQueue.TryDequeue(out var qi)) {
+					while (processQueue.TryDequeue(out var qi)) {
 						if (exitEvent.WaitOne(0)) break;
 						ProcessPhreaseSet(qi);
 					}
@@ -324,7 +337,7 @@ namespace WavDeco.WinForms {
 				return;
 			}
 
-			WriteLog($"処理を開始します({qi.Trial+1}回目)： {ph.WaveFilePath}");
+			WriteLog($"処理を開始します({qi.Trial + 1}回目)： {ph.WaveFilePath}");
 
 			try {
 				// セリフ
@@ -375,7 +388,7 @@ namespace WavDeco.WinForms {
 					processQueueEvent.Set();
 				}
 			}
-			catch(FileFormatException ex) {
+			catch (FileFormatException ex) {
 				WriteLog($"ファイル書式解析失敗 {ex.Message}");
 				if (qi.IncrementTrialCount(10)) {
 					processQueue.Enqueue(qi);
@@ -394,6 +407,36 @@ namespace WavDeco.WinForms {
 
 		private void button1_Click(object sender, EventArgs e) {
 			ClearLog();
+		}
+
+		private void ExeuteButton_Click(object sender, EventArgs e) {
+			var folder = TargetFolderTextBox.Text;
+			if (string.IsNullOrEmpty(folder)) {
+				MessageBox.Show("監視対象フォルダーが空です。", null, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+				return;
+			}
+			if (!Directory.Exists(folder)) {
+				MessageBox.Show("監視対象フォルダーが正しく指定されていません。", null, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+				return;
+			}
+
+			switch (MessageBox.Show("監視フォルダー内の全ファイルに処理を行います。よろしいですか？", null, MessageBoxButtons.YesNo)) {
+			case DialogResult.Yes:
+				break;
+			default:
+				return;
+			}
+
+			var filelist = Directory.EnumerateFiles(folder).ToArray();
+
+			foreach (var item in filelist) {
+				RemovePhraseCache(item);
+			}
+			foreach (var item in filelist) {
+				OnFileDetected(item);
+			}
+
+
 		}
 	}
 }

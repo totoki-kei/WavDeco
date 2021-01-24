@@ -29,6 +29,7 @@
 			this.ObserveToggleButton = new System.Windows.Forms.CheckBox();
 			this.LogTextBox = new System.Windows.Forms.TextBox();
 			this.button1 = new System.Windows.Forms.Button();
+			this.ExeuteButton = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -71,10 +72,10 @@
 			this.ObserveToggleButton.Appearance = System.Windows.Forms.Appearance.Button;
 			this.ObserveToggleButton.AutoCheck = false;
 			this.ObserveToggleButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this.ObserveToggleButton.Location = new System.Drawing.Point(683, 91);
+			this.ObserveToggleButton.Location = new System.Drawing.Point(683, 90);
 			this.ObserveToggleButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
 			this.ObserveToggleButton.Name = "ObserveToggleButton";
-			this.ObserveToggleButton.Size = new System.Drawing.Size(123, 36);
+			this.ObserveToggleButton.Size = new System.Drawing.Size(123, 34);
 			this.ObserveToggleButton.TabIndex = 2;
 			this.ObserveToggleButton.Text = "監視(&O)";
 			this.ObserveToggleButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -108,12 +109,23 @@
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
+			// ExeuteButton
+			// 
+			this.ExeuteButton.Location = new System.Drawing.Point(492, 91);
+			this.ExeuteButton.Name = "ExeuteButton";
+			this.ExeuteButton.Size = new System.Drawing.Size(183, 33);
+			this.ExeuteButton.TabIndex = 5;
+			this.ExeuteButton.Text = "今すぐ実行(&X)";
+			this.ExeuteButton.UseVisualStyleBackColor = true;
+			this.ExeuteButton.Click += new System.EventHandler(this.ExeuteButton_Click);
+			// 
 			// MainForm
 			// 
 			this.AllowDrop = true;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(825, 445);
+			this.Controls.Add(this.ExeuteButton);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.LogTextBox);
 			this.Controls.Add(this.ObserveToggleButton);
@@ -140,6 +152,7 @@
 		private System.Windows.Forms.CheckBox ObserveToggleButton;
 		private System.Windows.Forms.TextBox LogTextBox;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button ExeuteButton;
 	}
 }
 

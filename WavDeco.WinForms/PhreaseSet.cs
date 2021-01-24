@@ -19,7 +19,7 @@ namespace WavDeco.WinForms {
 				if (Math.Abs(delta.TotalMilliseconds) > setting.TimestampDeltaThresholdMsec) return false;
 			}
 
-			if (LastProcessed != default) {
+			{
 				var delta = DateTime.Now - LastProcessed;
 				Debug.WriteLine(delta, "delta(lastproc)");
 				if (delta.TotalMilliseconds < setting.OperationIntervalMsec) return false;
