@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO;
-using System.IO.Compression;
-using System.Linq;
-using System.Security.AccessControl;
+﻿using System.IO;
 using System.Text;
 
 namespace WavDeco.Core {
@@ -100,7 +96,7 @@ namespace WavDeco.Core {
 				// ここのバックアップ処理について世代管理をちゃんと行えるようにする
 
 				bool replaceCompleted = false;
-				for(int i = 0; i < backupCount; i++) {
+				for (int i = 0; i < backupCount; i++) {
 					try {
 						File.Move(path, bak);
 						File.Move(tmp, path);
@@ -111,7 +107,8 @@ namespace WavDeco.Core {
 
 						replaceCompleted = true;
 						break;
-					} catch(IOException) {
+					}
+					catch (IOException) {
 						bak = path + ".bak." + i.ToString("X2");
 					}
 				}
@@ -125,7 +122,8 @@ namespace WavDeco.Core {
 			}
 			catch {
 				throw;
-			} finally {
+			}
+			finally {
 				File.Delete(tmp);
 			}
 

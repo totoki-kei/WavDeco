@@ -2,11 +2,11 @@
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using System.Linq;
 using WavDeco.Core;
 
 namespace WavDeco.WinForms {

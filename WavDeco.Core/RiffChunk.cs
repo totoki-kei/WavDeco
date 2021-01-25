@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WavDeco.Core {
+﻿namespace WavDeco.Core {
 
 	class RiffChunk {
 		public uint Offset { get; private set; }

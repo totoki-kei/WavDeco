@@ -13,23 +13,23 @@ namespace WavDeco.WinForms {
 
 			LengthLimitCheckBox.Checked = this.Setting.EnabledLimitLength;
 			LengthLimitTextBox.Text = this.Setting.LimitLength.ToString();
-			switch(this.Setting.BackupMode) {
-				case BackupMode.Disable:
-					BackupDisableRadioButton.Checked = true;
-					break;
-				case BackupMode.One:
-					BackupOneRadioButton.Checked = true;
-					break;
-				case BackupMode.Infinite:
-					BackupInfiniteRadioButton.Checked = true;
-					break;
+			switch (this.Setting.BackupMode) {
+			case BackupMode.Disable:
+				BackupDisableRadioButton.Checked = true;
+				break;
+			case BackupMode.One:
+				BackupOneRadioButton.Checked = true;
+				break;
+			case BackupMode.Infinite:
+				BackupInfiniteRadioButton.Checked = true;
+				break;
 			}
 
 			TalkerCheckBox.Checked = this.Setting.EnabledTalkerDetection;
 			TalkerDelimiterTextBox.Text = this.Setting.TalkerDelimiter;
 
 			StartupInitialFolderCheckBox.Checked = this.Setting.EnableInitialFolder;
-			switch(this.Setting.InitialFolder) {
+			switch (this.Setting.InitialFolder) {
 			case InitialFolder.LastFolder:
 				StartupLastFolderRadioButton.Checked = true;
 				break;
@@ -51,7 +51,7 @@ namespace WavDeco.WinForms {
 			TalkerDelimiterTextBox.Enabled = TalkerCheckBox.Checked;
 
 			StartupLastFolderRadioButton.Enabled =
-				StartupAppFolderRadioButton.Enabled = 
+				StartupAppFolderRadioButton.Enabled =
 				StartupWorkinDirectoryRadioButton.Enabled = StartupInitialFolderCheckBox.Checked;
 
 		}
@@ -59,7 +59,7 @@ namespace WavDeco.WinForms {
 		private void textBox1_KeyPress(object sender, KeyPressEventArgs e) {
 			if (char.IsDigit(e.KeyChar)) return;
 			if (char.IsControl(e.KeyChar)) return;
-			
+
 			e.Handled = true;
 		}
 
@@ -70,28 +70,31 @@ namespace WavDeco.WinForms {
 		private void button1_Click(object sender, EventArgs e) {
 			Setting.EnabledLimitLength = LengthLimitCheckBox.Checked;
 			Setting.LimitLength = int.Parse(LengthLimitTextBox.Text);
-			
+
 			if (BackupDisableRadioButton.Checked) {
 				Setting.BackupMode = BackupMode.Disable;
-			} else if (BackupOneRadioButton.Checked) {
+			}
+			else if (BackupOneRadioButton.Checked) {
 				Setting.BackupMode = BackupMode.One;
-			} else if (BackupInfiniteRadioButton.Checked) {
+			}
+			else if (BackupInfiniteRadioButton.Checked) {
 				Setting.BackupMode = BackupMode.Infinite;
 			}
-			
+
 			Setting.EnabledTalkerDetection = TalkerCheckBox.Checked;
 			Setting.TalkerDelimiter = TalkerDelimiterTextBox.Text;
 
 			Setting.EnableInitialFolder = StartupInitialFolderCheckBox.Enabled;
 			if (StartupLastFolderRadioButton.Checked) {
 				Setting.InitialFolder = InitialFolder.LastFolder;
-			} else if(StartupAppFolderRadioButton.Checked) {
+			}
+			else if (StartupAppFolderRadioButton.Checked) {
 				Setting.InitialFolder = InitialFolder.AppFolder;
 			}
 			else if (StartupWorkinDirectoryRadioButton.Checked) {
 				Setting.InitialFolder = InitialFolder.WorkingDirectory;
 			}
-			
+
 			Setting.EnableInstantStart = InstantStartCheckBox.Checked;
 
 		}
