@@ -111,6 +111,7 @@
 			// 
 			// ExeuteButton
 			// 
+			this.ExeuteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.ExeuteButton.Location = new System.Drawing.Point(492, 91);
 			this.ExeuteButton.Name = "ExeuteButton";
 			this.ExeuteButton.Size = new System.Drawing.Size(183, 33);
