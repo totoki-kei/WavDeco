@@ -352,8 +352,8 @@ namespace WavDeco.WinForms {
 				}
 
 				if (setting.EnabledTalkerDetection) {
-					var s = phraseText.Split(new[] { setting.TalkerDelimiter }, StringSplitOptions.RemoveEmptyEntries);
-					if (s.Length >= 2) {
+					var s = phraseText.Split(new[] { setting.TalkerDelimiter }, StringSplitOptions.None);
+					if (s.Length >= 2 && s[0].Length > 0) {
 						// 最初の区切りまでを話者、それ以降をセリフとする
 						talkerName = s[0];
 						phraseText = phraseText.Substring(talkerName.Length + setting.TalkerDelimiter.Length);
@@ -386,6 +386,7 @@ namespace WavDeco.WinForms {
 				if (qi.IncrementTrialCount(10)) {
 					processQueue.Enqueue(qi);
 					processQueueEvent.Set();
+					return;
 				}
 			}
 			catch (FileFormatException ex) {
@@ -393,6 +394,7 @@ namespace WavDeco.WinForms {
 				if (qi.IncrementTrialCount(10)) {
 					processQueue.Enqueue(qi);
 					processQueueEvent.Set();
+					return;
 				}
 			}
 
@@ -405,7 +407,7 @@ namespace WavDeco.WinForms {
 			SaveSetting(setting);
 		}
 
-		private void button1_Click(object sender, EventArgs e) {
+		private void ClearLogButton_Click(object sender, EventArgs e) {
 			ClearLog();
 		}
 
@@ -437,6 +439,22 @@ namespace WavDeco.WinForms {
 			}
 
 
+		}
+
+		private void BrowseFolderButton_Click(object sender, EventArgs e) {
+			using (var ofd = new OpenFileDialog() {
+				Title = "フォルダーを選択",
+				FileName = "Folder Selection",
+				Filter = "Folder|.",
+				InitialDirectory = TargetFolderTextBox.Text,
+				ValidateNames = false,
+				CheckFileExists = false,
+				CheckPathExists = true,
+			}) {
+				if (ofd.ShowDialog() == DialogResult.OK) {
+					TargetFolderTextBox.Text = Path.GetDirectoryName(ofd.FileName);
+				}
+			}
 		}
 	}
 }
